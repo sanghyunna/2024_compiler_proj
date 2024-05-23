@@ -11,3 +11,10 @@
     - Print error report(ex. error location) for rejected strings
 '''
 
+import pandas as pd
+
+action_df = pd.read_csv("./action.csv")
+# goto_df = pd.read_csv("./goto.csv")
+
+print(action_df.head())
+print(action_df.iloc[4, 2])
