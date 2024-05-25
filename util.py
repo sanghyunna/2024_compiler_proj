@@ -53,11 +53,11 @@ def syntax_analyzer(target_token_list, action_df, goto_df):
 
         #reject 작업
         else:
-            if decision == None:
-                print("Rejected, invalid Grammar")
-                #print(curr_token_list[curr_pointer:])
-            elif not is_in_terminal_list(terminal_list, next_input_symbol):
+            if not is_in_terminal_list(terminal_list, next_input_symbol):
                 print("Rejected, invalid token")
+                #print(curr_token_list[curr_pointer:])
+            elif decision == None:
+                print("Rejected, invalid Grammar")
                 #print(curr_token_list[curr_pointer:])
             else:
                 print("Rejected, undetermined Error")
