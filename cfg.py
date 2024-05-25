@@ -43,3 +43,11 @@ def key(rule_dict):
 
 def val(rule_dict):
     return rule_dict.values()[0]
+
+cfg = get_cfg()
+
+#print(list(cfg[1].keys())[0])
+#print(list(cfg[1].values())[0]    )
+
+
+

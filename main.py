@@ -19,6 +19,8 @@ action_file_dir = "./action.csv"
 goto_file_dir = "./goto.csv"
 
 ## Target string
+
+#input file 입력받는 걸로 바꿀 예정
 token_list = []
 if len(sys.argv) > 1:
     for arg in sys.argv:
@@ -32,9 +34,13 @@ else:
 action_df = read_csv_file(action_file_dir)
 goto_df = read_csv_file(goto_file_dir)
 
+
+#test파일
 print(action_df.head())
 print(goto_df.head())
 
 syntax_analyzer(token_list, action_df, goto_df)
 
 print("Analysis complete.")
+
+input('')
