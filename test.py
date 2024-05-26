@@ -13,8 +13,16 @@
 
 import pandas as pd
 
+#read_csv(): pandas 라이브러리로 dataFrame 반환
 action_df = pd.read_csv("./action.csv")
 # goto_df = pd.read_csv("./goto.csv")
 
 print(action_df.head())
-print(action_df.iloc[4, 2])
+print(action_df.iloc[4,2])
+
+print(action_df.iloc[:0])
+print(action_df.head(0).columns.tolist())
+
+
+
+
