@@ -39,10 +39,10 @@ def get_cfg():
     return cfg
 
 def key(rule_dict):
-    return rule_dict.keys()[0]
+    return list(rule_dict.keys())[0]
 
 def val(rule_dict):
-    return rule_dict.values()[0]
+    return list(rule_dict.values())[0]
 
 cfg = get_cfg()
 
