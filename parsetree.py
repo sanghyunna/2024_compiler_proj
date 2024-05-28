@@ -72,6 +72,7 @@ def construct_parse_tree(cfg_number_list):
                 child_node = create_node(child_node_name)
                 child_node.parent = parent_node
                 print("Child node", child_node_name, "not found in stack. Creating new node and setting parent as", parent_node_name)
+                
                 if child_node.name not in terminal_list:
                  stack.append(child_node) 
 
