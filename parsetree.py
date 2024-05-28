@@ -49,7 +49,7 @@ def construct_parse_tree(cfg_number_list):
         parent_node_name = list(cfg[cfg_number].keys())[0]
         parent_node = create_node(parent_node_name)
         print("<Parent NODE> ", parent_node_name)  
-                
+     
         for child_node_name in list(cfg[cfg_number].values())[0]:
             print("<CHILD NODE> ", child_node_name)  
             
@@ -81,7 +81,7 @@ def construct_parse_tree(cfg_number_list):
         print("=================")
 
     root_node = stack.pop()
-    print_parse_tree(root_node)
+    return root_node
 
 
 def create_node(name):
@@ -101,5 +101,6 @@ def print_parse_tree(root_node):
      
 #test
 #root_node = construct_parse_tree([4,20,31,30,29,24,33,27,24,23,17,14,12,7,34,18,3,2,1])                    
-construct_parse_tree([4, 20, 31, 30, 29, 31, 30, 29, 24, 31, 30, 29, 24, 33, 27, 24, 23, 32, 27, 24, 23, 24, 32, 27, 24, 23, 17, 14, 12, 7, 34, 18, 3, 2, 1])  
+root_node = construct_parse_tree([4, 20, 31, 30, 29, 31, 30, 29, 24, 31, 30, 29, 24, 33, 27, 24, 23, 32, 27, 24, 23, 24, 32, 27, 24, 23, 17, 14, 12, 7, 34, 18, 3, 2, 1])  
+print_parse_tree(root_node)
 
