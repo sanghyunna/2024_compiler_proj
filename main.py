@@ -25,6 +25,8 @@ token_list = []
 if len(sys.argv) == 2:
     input_file_dir = sys.argv[1]
     token_list = get_tokens(input_file_dir)
+    #token_list 테스트
+    print(token_list)
 elif len(sys.argv) == 1:
     print("Please enter target string to parse.")
     sys.exit()
@@ -35,6 +37,8 @@ else:
 ## Read action, goto table
 action_df = read_csv_file(action_file_dir).astype(str)
 goto_df = read_csv_file(goto_file_dir).astype(str)
+#데이터 프레임 안의 문자열을 String으로 변환
+
 
 #test파일
 # print(action_df.head())

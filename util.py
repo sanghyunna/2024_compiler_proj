@@ -2,6 +2,8 @@ import sys
 import pandas as pd
 from cfg import *
 
+#parasetree 임포트 추가
+
 def read_csv_file(target_file_dir):
     try:
         return pd.read_csv(target_file_dir)
@@ -18,6 +20,7 @@ def print_status(state_stack, lhs_list, rhs_list):
     print(f"LHS_list: {lhs_list}")
     print(f"RHS_list: {rhs_list}")
 
+# Pointer 옮기는 함수
 def advance_pointer(lhs_list, rhs_list):
     temp = rhs_list[0]
     lhs_list.append(temp)
@@ -26,10 +29,11 @@ def advance_pointer(lhs_list, rhs_list):
 def curr_state(state_stack):
     return state_stack[-1]
 
+## 현재 CFG의 terminal들의 List 반환
 def return_terminal_list(action_df):
     return action_df.head(0).columns.tolist()
 
-## 현재 CFG의 terminal들의 List 반환
+## 현재 CFG의 terminal에 속하는지 반환
 def is_in_terminal_list(terminal_list, next_input_symbol):
     if next_input_symbol in terminal_list:
         return True
@@ -50,11 +54,15 @@ def syntax_analyzer(target_token_list, action_df, goto_df):
     # 개발 편의를 위해 splitter를 사용하지 않고 lhs, rhs를 따로 저장
     lhs_list = []
     rhs_list = target_token_list.copy()
+
+    #reduce_cfg_list선언 => Parsetree에 넘길 인자
+    reduce_cfg_list = []
     
     while True:
-        print_status(state_stack, lhs_list, rhs_list)
         
         decision = action_df.loc[curr_state(state_stack), next_input_symbol(rhs_list)]
+
+        print_status(state_stack, lhs_list, rhs_list)
         print(f"DECISION: {decision}")
 
         if decision[0] == "s":
@@ -75,27 +83,36 @@ def syntax_analyzer(target_token_list, action_df, goto_df):
                 break
             state_stack.append(int(float(res)))
 
+            #reduce가 일어났을 때 CFG번호 reduce_cfg_list저장
+            reduce_cfg_list.append(rule_num)
+
             for i in range(len(rule_right)):
                 lhs_list.pop()
             lhs_list.append(rule_left)
 
-
-
-            
         elif decision == "acc":
-            if len(lhs_list) == 1 and lhs_list[0] == "S'":
-                print("Accepted.")
-            else:
-                print("Rejected, \'acc\' was reached but lhs_list is not empty.")
-            break
+            #if len(lhs_list) == 1 and lhs_list[0] == "S'":
+                print("=======================\n<ACCEPTED!!!!.> ")
+                print('Print Prase tree? say \'Yes\'')
+                input('')
+                print(reduce_cfg_list)
+                #construct_parse_tree(reduce_cfg_list)
+
+                #root_Node = construct_parse_tree(reduce_cfg_list)
+                #print_parse_tree(root_node)
+
+                break
+            #else:
+             #   print("Rejected, \'acc\' was reached but lhs_list is not empty.")
+            #break
 
         #reject 작업
         else:
             if not is_in_terminal_list(terminal_list, next_input_symbol(rhs_list)):
-                print("Rejected, invalid token")
+                print("Rejected, invalid terminal")
 
             elif decision == "nan":
-                print("Rejected, invalid Grammar")
+                print("Rejected, invalid input")
                 # 개인적으로 이 부분은 invalid grammar가 아니라 invalid input 정도가 더 적당할 수 있을 것 같습니다!
 
             else:
