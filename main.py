@@ -12,7 +12,7 @@
 """
 
 import sys
-from util import *
+from syntax_analyzer import *
 
 ## SLR Table action, goto table
 action_file_dir = "./action.csv"
