@@ -1,7 +1,7 @@
 ,vtype,id,semi,assign,literal,character,boolstr,addsub,multdiv,lparen,rparen,num,lbrace,rbrace,comma,if,while,comp,else,return,$
 0,s4,,,,,,,,,,,,,,,,,,,,r3
 1,,,,,,,,,,,,,,,,,,,,,acc
-2,,,,,,,,,,,,,,,,,,,,,r3
+2,s4,,,,,,,,,,,,,,,,,,,,r3
 3,s4,,,,,,,,,,,,,,,,,,,,r3
 4,,s7,,,,,,,,,,,,,,,,,,,
 5,,,,,,,,,,,,,,,,,,,,,r1

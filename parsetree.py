@@ -1,7 +1,5 @@
 from util import *
 
-from cfg import *
-
 from anytree import Node, RenderTree
 from anytree.exporter import DotExporter
 
@@ -35,12 +33,12 @@ from anytree.exporter import DotExporter
     return root_node
 '''
 
-action_file_dir = "./action.csv"
-action_df = read_csv_file(action_file_dir)
-terminal_list = return_terminal_list(action_df)
-
 #굳이 stack을 쓸 필요 없을 듯
 def construct_parse_tree(cfg_number_list):
+    action_file_dir = "./action.csv"
+    action_df = read_csv_file(action_file_dir)
+    terminal_list = return_terminal_list(action_df)
+
     cfg = get_cfg()
     stack = []
 
@@ -51,7 +49,7 @@ def construct_parse_tree(cfg_number_list):
         parent_node_name = list(cfg[cfg_number].keys())[0]
         parent_node = create_node(parent_node_name)
         print("<Parent NODE> ", parent_node_name)  
-                
+     
         for child_node_name in list(cfg[cfg_number].values())[0]:
             print("<CHILD NODE> ", child_node_name)  
             
@@ -72,6 +70,7 @@ def construct_parse_tree(cfg_number_list):
                 child_node = create_node(child_node_name)
                 child_node.parent = parent_node
                 print("Child node", child_node_name, "not found in stack. Creating new node and setting parent as", parent_node_name)
+                
                 if child_node.name not in terminal_list:
                  stack.append(child_node) 
 
@@ -101,5 +100,7 @@ def print_parse_tree(root_node):
           print("%s%s " % (pre, node.name))
      
 #test
-root_node = construct_parse_tree([4,20,31,30,29,24,33,27,24,23,17,14,12,7,34,18,3,2,1])                    
-print_parse_tree(root_node)             
+#root_node = construct_parse_tree([4,20,31,30,29,24,33,27,24,23,17,14,12,7,34,18,3,2,1])                    
+root_node = construct_parse_tree([4, 20, 31, 30, 29, 31, 30, 29, 24, 31, 30, 29, 24, 33, 27, 24, 23, 32, 27, 24, 23, 24, 32, 27, 24, 23, 17, 14, 12, 7, 34, 18, 3, 2, 1])  
+print_parse_tree(root_node)
+
