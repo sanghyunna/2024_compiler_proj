@@ -41,16 +41,23 @@ def construct_parse_tree(cfg_number_list):
 
     cfg = get_cfg()
     stack = []
+    child_node_list = []
 
     for cfg_number in cfg_number_list:
         print("<CFG NUMBER> ", cfg_number)  
         print("<CFG GRAMMER> ", cfg[cfg_number])
 
         parent_node_name = list(cfg[cfg_number].keys())[0]
+        child_node_list = list(cfg[cfg_number].values())[0]
+
         parent_node = create_node(parent_node_name)
         print("<Parent NODE> ", parent_node_name)  
-     
-        for child_node_name in list(cfg[cfg_number].values())[0]:
+
+        if not child_node_list:
+            child_node_list.append("\'\'")
+
+        for child_node_name in child_node_list:
+
             print("<CHILD NODE> ", child_node_name)  
             
             if check_child_node_is_in_stack(stack, child_node_name):
@@ -71,7 +78,7 @@ def construct_parse_tree(cfg_number_list):
                 child_node.parent = parent_node
                 print("Child node", child_node_name, "not found in stack. Creating new node and setting parent as", parent_node_name)
                 
-                if child_node.name not in terminal_list:
+                if child_node.name not in terminal_list and not "\'\'":
                  stack.append(child_node) 
 
         stack.append(parent_node)
