@@ -44,6 +44,11 @@ goto_df = read_csv_file(goto_file_dir).astype(str)
 # print(action_df.head())
 # print(goto_df.head())
 
+for token in token_list:
+    if token not in return_terminal_list(action_df):
+        print(f"Invalid token detected: {token}")
+        sys.exit()
+
 syntax_analyzer(token_list, action_df, goto_df)
 
 print("Analysis complete.")
