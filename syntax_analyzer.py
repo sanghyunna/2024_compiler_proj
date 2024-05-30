@@ -63,11 +63,8 @@ def syntax_analyzer(target_token_list, action_df, goto_df):
 
         #reject 작업
         else:
-            if not is_in_terminal_list(terminal_list, next_input_symbol(rhs_list)):
-                print("Rejected, invalid terminal")
-
-            elif decision == "nan":
-                print("Rejected, invalid input")
+            if decision == "nan":
+                print("\n<***Rejected, Invalid input(Grammar) detected***, The corresponding field in the SLR table does not exist> \n")
 
             else:
                 print("Rejected, undetermined Error")
