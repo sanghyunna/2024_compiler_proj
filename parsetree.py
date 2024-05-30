@@ -101,6 +101,6 @@ def print_parse_tree(root_node):
      
 #test
 #root_node = construct_parse_tree([4,20,31,30,29,24,33,27,24,23,17,14,12,7,34,18,3,2,1])                    
-root_node = construct_parse_tree([4, 20, 31, 30, 29, 31, 30, 29, 24, 31, 30, 29, 24, 33, 27, 24, 23, 32, 27, 24, 23, 24, 32, 27, 24, 23, 17, 14, 12, 7, 34, 18, 3, 2, 1])  
-print_parse_tree(root_node)
+#root_node = construct_parse_tree([4, 20, 31, 30, 29, 31, 30, 29, 24, 31, 30, 29, 24, 33, 27, 24, 23, 32, 27, 24, 23, 24, 32, 27, 24, 23, 17, 14, 12, 7, 34, 18, 3, 2, 1])  
+#print_parse_tree(root_node)
 
