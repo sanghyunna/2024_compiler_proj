@@ -65,6 +65,7 @@ def syntax_analyzer(target_token_list, action_df, goto_df):
         else:
             if decision == "nan":
                 print("\n<***Rejected, Invalid input(Grammar) detected***, The corresponding field in the SLR table does not exist> \n")
+                print(f"Error occured at: {lhs_list[-1]} -> {rhs_list[0]}")
 
             else:
                 print("Rejected, undetermined Error")
