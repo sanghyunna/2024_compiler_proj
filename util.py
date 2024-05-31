@@ -29,11 +29,11 @@ def advance_pointer(lhs_list, rhs_list):
 def curr_state(state_stack):
     return state_stack[-1]
 
-## 현재 CFG의 terminal들의 List 반환
+## 현재 CFG의 terminal들의 List 반환, SLR table의 head(0)부분에는 terminal들이 있음.
 def return_terminal_list(action_df):
     return action_df.head(0).columns.tolist()
 
-## 현재 CFG의 terminal에 속하는지 반환
+## 현재 CFG의 terminal에 속하는지 반환. terminal_list를 이용해 next_input_symbol이 이 리스트안에 속하지 않으면 False를 반환
 def is_in_terminal_list(terminal_list, next_input_symbol):
     if next_input_symbol in terminal_list:
         return True
