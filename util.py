@@ -2,8 +2,7 @@ import sys
 import pandas as pd
 from cfg import *
 
-#from parsetree import *
-
+# CFG 파일 읽어오기
 def read_csv_file(target_file_dir):
     try:
         return pd.read_csv(target_file_dir)
@@ -11,9 +10,11 @@ def read_csv_file(target_file_dir):
         print(f"[{target_file_dir}] not found.")
     sys.exit()
 
+# 다음 input symbol 반환
 def next_input_symbol(rhs_list):
     return rhs_list[0]
 
+# 현재 상태 출력
 def print_status(state_stack, lhs_list, rhs_list):
     print("--------------------")
     print(f"STATE_STACK: {state_stack}")
@@ -26,6 +27,7 @@ def advance_pointer(lhs_list, rhs_list):
     lhs_list.append(temp)
     rhs_list.pop(0)
 
+# 현재 state 반환
 def curr_state(state_stack):
     return state_stack[-1]
 
@@ -40,6 +42,7 @@ def is_in_terminal_list(terminal_list, next_input_symbol):
     else:
         return False
 
+# 토큰을 읽어와서 리스트로 반환
 def get_tokens(input_file_dir):
     with open(input_file_dir, 'r') as f:
         return f.read().split()

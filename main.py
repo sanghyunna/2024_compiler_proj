@@ -20,7 +20,6 @@ goto_file_dir = "./goto.csv"
 
 ## Target string
 
-#input file 입력받는 걸로 바꿀 예정
 token_list = []
 if len(sys.argv) == 2:
     input_file_dir = sys.argv[1]
@@ -35,16 +34,11 @@ else:
     sys.exit()
 
 ## Read action, goto table
-action_df = read_csv_file(action_file_dir).astype(str)
-goto_df = read_csv_file(goto_file_dir).astype(str)
-#데이터 프레임 안의 문자열을 String으로 변환
+action_df = read_csv_file(action_file_dir).astype(str) # 액션 테이블을 읽어옴
+goto_df = read_csv_file(goto_file_dir).astype(str) # GOTO 테이블을 읽어옴
+#데이터 프레임 안의 문자열을 String으로 변환해야함
 
-
-#test파일
-# print(action_df.head())
-# print(goto_df.head())
-
-for token in token_list:
+for token in token_list: # 토큰이 터미널에 없으면 에러 출력
     if token not in return_terminal_list(action_df):
         print(f"\n<***Rejected, Invalid token detected***>: \'{token}\' \n")
         print("==================")

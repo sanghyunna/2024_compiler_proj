@@ -1,3 +1,4 @@
+# cfg를 텍스트로 저장하지 않고, 함수의 형태로 가져올 수 있도록 구성함
 def get_cfg():
     cfg = [
         {"S\'": ["CODE"]},
@@ -38,9 +39,11 @@ def get_cfg():
     ]
     return cfg
 
+# cfg rule의 key를 반환
 def key(rule_dict):
     return list(rule_dict.keys())[0]
 
+# cfg rule의 value를 반환
 def val(rule_dict):
     return list(rule_dict.values())[0]
 
