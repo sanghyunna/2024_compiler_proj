@@ -1,0 +1,496 @@
+PS C:\Users\Administrator\Desktop\학교 자료들\3학년1학기\컴파일러\Syntax-Analyzer\2024_compiler_proj> python main.py test.txt 
+['vtype', 'id', 'semi', 'vtype', 'id', 'lparen', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace']
+--------------------
+STATE_STACK: [0]
+LHS_list: []
+RHS_list: ['vtype', 'id', 'semi', 'vtype', 'id', 'lparen', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s4
+--------------------
+STATE_STACK: [0, 4]
+LHS_list: ['vtype']
+RHS_list: ['id', 'semi', 'vtype', 'id', 'lparen', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s7
+--------------------
+STATE_STACK: [0, 4, 7]
+LHS_list: ['vtype', 'id']
+RHS_list: ['semi', 'vtype', 'id', 'lparen', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s9
+--------------------
+STATE_STACK: [0, 4, 7, 9]
+LHS_list: ['vtype', 'id', 'semi']
+RHS_list: ['vtype', 'id', 'lparen', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: r4
+--------------------
+STATE_STACK: [0, 2]
+LHS_list: ['VDECL']
+RHS_list: ['vtype', 'id', 'lparen', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s4
+--------------------
+STATE_STACK: [0, 2, 4]
+LHS_list: ['VDECL', 'vtype']
+RHS_list: ['id', 'lparen', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s7
+--------------------
+STATE_STACK: [0, 2, 4, 7]
+LHS_list: ['VDECL', 'vtype', 'id']
+RHS_list: ['lparen', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s10
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen']
+RHS_list: ['rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: r20
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG']
+RHS_list: ['rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s25
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen']
+RHS_list: ['lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s30
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace']
+RHS_list: ['if', 'lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s40
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if']
+RHS_list: ['lparen', 'boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s49
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen']
+RHS_list: ['boolstr', 'comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s56
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 56]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr']
+RHS_list: ['comp', 'boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s62
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 56, 62]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp']
+RHS_list: ['boolstr', 'rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s65
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 56, 62, 65]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr']
+RHS_list: ['rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: r31
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 56, 62, 65, 68]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'comp', 'boolstr', 'COND_T']
+RHS_list: ['rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: r30
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 56, 61]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'boolstr', 'COND_T']
+RHS_list: ['rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: r29
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 55]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'COND']
+RHS_list: ['rparen', 'lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s60
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 55, 60]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'COND', 'rparen']
+RHS_list: ['lbrace', 'rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s64
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 55, 60, 64]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'COND', 'rparen', 'lbrace']
+RHS_list: ['rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: r24
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 55, 60, 64, 67]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'COND', 'rparen', 'lbrace', 'BLOCK']
+RHS_list: ['rbrace', 'return', 'num', 'semi', 'rbrace', '$']
+DECISION: s70
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 55, 60, 64, 67, 70]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'COND', 'rparen', 'lbrace', 'BLOCK', 'rbrace']
+RHS_list: ['return', 'num', 'semi', 'rbrace', '$']
+DECISION: r33
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 40, 49, 55, 60, 64, 67, 70, 72]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'if', 'lparen', 'COND', 'rparen', 'lbrace', 'BLOCK', 'rbrace', 'ELSE']
+RHS_list: ['return', 'num', 'semi', 'rbrace', '$']
+DECISION: r27
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 37]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'STMT']
+RHS_list: ['return', 'num', 'semi', 'rbrace', '$']
+DECISION: r24
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 37, 47]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'STMT', 'BLOCK']
+RHS_list: ['return', 'num', 'semi', 'rbrace', '$']
+DECISION: r23
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK']
+RHS_list: ['return', 'num', 'semi', 'rbrace', '$']
+DECISION: s46
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 46]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'return']
+RHS_list: ['num', 'semi', 'rbrace', '$']
+DECISION: s24
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 46, 24]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'return', 'num']
+RHS_list: ['semi', 'rbrace', '$']
+DECISION: r17
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 46, 21]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'return', 'F_EXPR']
+RHS_list: ['semi', 'rbrace', '$']
+DECISION: r14
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 46, 20]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'return', 'T_EXPR']
+RHS_list: ['semi', 'rbrace', '$']
+DECISION: r12
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 46, 16]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'return', 'EXPR']
+RHS_list: ['semi', 'rbrace', '$']
+DECISION: r7
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 46, 54]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'return', 'RHS']
+RHS_list: ['semi', 'rbrace', '$']
+DECISION: s59
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 46, 54, 59]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'return', 'RHS', 'semi']
+RHS_list: ['rbrace', '$']
+DECISION: r34
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 45]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'RETURN']
+RHS_list: ['rbrace', '$']
+DECISION: s53
+--------------------
+STATE_STACK: [0, 2, 4, 7, 10, 13, 25, 30, 36, 45, 53]
+LHS_list: ['VDECL', 'vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'RETURN', 'rbrace']
+RHS_list: ['$']
+DECISION: r18
+--------------------
+STATE_STACK: [0, 2, 3]
+LHS_list: ['VDECL', 'FDECL']
+RHS_list: ['$']
+DECISION: r3
+--------------------
+STATE_STACK: [0, 2, 3, 6]
+LHS_list: ['VDECL', 'FDECL', 'CODE']
+RHS_list: ['$']
+DECISION: r2
+--------------------
+STATE_STACK: [0, 2, 5]
+LHS_list: ['VDECL', 'CODE']
+RHS_list: ['$']
+DECISION: r1
+--------------------
+STATE_STACK: [0, 1]
+LHS_list: ['CODE']
+RHS_list: ['$']
+DECISION: acc
+=======================
+<ACCEPTED!!!!.>
+Print Prase tree? say 'Yes'
+yes
+[4, 20, 31, 30, 29, 24, 33, 27, 24, 23, 17, 14, 12, 7, 34, 18, 3, 2, 1]
+<CFG NUMBER>  4
+<CFG GRAMMER>  {'VDECL': ['vtype', 'id', 'semi']}
+<Parent NODE>  VDECL
+<CHILD NODE>  vtype
+Child node vtype not found in stack. Creating new node and setting parent as VDECL
+<CHILD NODE>  id
+Child node id not found in stack. Creating new node and setting parent as VDECL
+<CHILD NODE>  semi
+Child node semi not found in stack. Creating new node and setting parent as VDECL
+<stack>
+VDECL
+=================
+<CFG NUMBER>  20
+<CFG GRAMMER>  {'ARG': []}
+<Parent NODE>  ARG
+<CHILD NODE>  ''
+Child node '' not found in stack. Creating new node and setting parent as ARG
+<stack>
+VDECL
+ARG
+=================
+<CFG NUMBER>  31
+<CFG GRAMMER>  {'COND_T': []}
+<Parent NODE>  COND_T
+<CHILD NODE>  ''
+Child node '' not found in stack. Creating new node and setting parent as COND_T
+<stack>
+VDECL
+ARG
+COND_T
+=================
+<CFG NUMBER>  30
+<CFG GRAMMER>  {'COND_T': ['comp', 'boolstr', 'COND_T']}
+<Parent NODE>  COND_T
+<CHILD NODE>  comp
+Child node comp not found in stack. Creating new node and setting parent as COND_T
+<CHILD NODE>  boolstr
+Child node boolstr not found in stack. Creating new node and setting parent as COND_T
+<CHILD NODE>  COND_T
+Child node COND_T found in stack. Popping from stack and setting parent as COND_T
+<stack>
+VDECL
+ARG
+COND_T
+=================
+<CFG NUMBER>  29
+<CFG GRAMMER>  {'COND': ['boolstr', 'COND_T']}
+<Parent NODE>  COND
+<CHILD NODE>  boolstr
+Child node boolstr not found in stack. Creating new node and setting parent as COND
+<CHILD NODE>  COND_T
+Child node COND_T found in stack. Popping from stack and setting parent as COND
+<stack>
+VDECL
+ARG
+COND
+=================
+<CFG NUMBER>  24
+<CFG GRAMMER>  {'BLOCK': []}
+<Parent NODE>  BLOCK
+<CHILD NODE>  ''
+Child node '' not found in stack. Creating new node and setting parent as BLOCK
+<stack>
+VDECL
+ARG
+COND
+BLOCK
+=================
+<CFG NUMBER>  33
+<CFG GRAMMER>  {'ELSE': []}
+<Parent NODE>  ELSE
+<CHILD NODE>  ''
+Child node '' not found in stack. Creating new node and setting parent as ELSE
+<stack>
+VDECL
+ARG
+COND
+BLOCK
+ELSE
+=================
+<CFG NUMBER>  27
+<CFG GRAMMER>  {'STMT': ['if', 'lparen', 'COND', 'rparen', 'lbrace', 'BLOCK', 'rbrace', 'ELSE']}
+<Parent NODE>  STMT
+<CHILD NODE>  if
+Child node if not found in stack. Creating new node and setting parent as STMT
+<CHILD NODE>  lparen
+Child node lparen not found in stack. Creating new node and setting parent as STMT
+<CHILD NODE>  COND
+Child node COND found in stack. Popping from stack and setting parent as STMT
+<CHILD NODE>  rparen
+Child node rparen not found in stack. Creating new node and setting parent as STMT
+<CHILD NODE>  lbrace
+Child node lbrace not found in stack. Creating new node and setting parent as STMT
+<CHILD NODE>  BLOCK
+Child node BLOCK found in stack. Popping from stack and setting parent as STMT
+<CHILD NODE>  rbrace
+Child node rbrace not found in stack. Creating new node and setting parent as STMT
+<CHILD NODE>  ELSE
+Child node ELSE found in stack. Popping from stack and setting parent as STMT
+<stack>
+VDECL
+ARG
+STMT
+=================
+<CFG NUMBER>  24
+<CFG GRAMMER>  {'BLOCK': ["''"]}
+<Parent NODE>  BLOCK
+<CHILD NODE>  ''
+Child node '' not found in stack. Creating new node and setting parent as BLOCK
+<stack>
+VDECL
+ARG
+STMT
+BLOCK
+=================
+<CFG NUMBER>  23
+<CFG GRAMMER>  {'BLOCK': ['STMT', 'BLOCK']}
+<Parent NODE>  BLOCK
+<CHILD NODE>  STMT
+Child node STMT found in stack. Popping from stack and setting parent as BLOCK
+<CHILD NODE>  BLOCK
+Child node BLOCK found in stack. Popping from stack and setting parent as BLOCK
+<stack>
+VDECL
+ARG
+BLOCK
+=================
+<CFG NUMBER>  17
+<CFG GRAMMER>  {'F_EXPR': ['num']}
+<Parent NODE>  F_EXPR
+<CHILD NODE>  num
+Child node num not found in stack. Creating new node and setting parent as F_EXPR
+<stack>
+VDECL
+ARG
+BLOCK
+F_EXPR
+=================
+<CFG NUMBER>  14
+<CFG GRAMMER>  {'T_EXPR': ['F_EXPR']}
+<Parent NODE>  T_EXPR
+<CHILD NODE>  F_EXPR
+Child node F_EXPR found in stack. Popping from stack and setting parent as T_EXPR
+<stack>
+VDECL
+ARG
+BLOCK
+T_EXPR
+=================
+<CFG NUMBER>  12
+<CFG GRAMMER>  {'EXPR': ['T_EXPR']}
+<Parent NODE>  EXPR
+<CHILD NODE>  T_EXPR
+Child node T_EXPR found in stack. Popping from stack and setting parent as EXPR
+<stack>
+VDECL
+ARG
+BLOCK
+EXPR
+=================
+<CFG NUMBER>  7
+<CFG GRAMMER>  {'RHS': ['EXPR']}
+<Parent NODE>  RHS
+<CHILD NODE>  EXPR
+Child node EXPR found in stack. Popping from stack and setting parent as RHS
+<stack>
+VDECL
+ARG
+BLOCK
+RHS
+=================
+<CFG NUMBER>  34
+<CFG GRAMMER>  {'RETURN': ['return', 'RHS', 'semi']}
+<Parent NODE>  RETURN
+<CHILD NODE>  return
+Child node return not found in stack. Creating new node and setting parent as RETURN
+<CHILD NODE>  RHS
+Child node RHS found in stack. Popping from stack and setting parent as RETURN
+<CHILD NODE>  semi
+Child node semi not found in stack. Creating new node and setting parent as RETURN
+<stack>
+VDECL
+ARG
+BLOCK
+RETURN
+=================
+<CFG NUMBER>  18
+<CFG GRAMMER>  {'FDECL': ['vtype', 'id', 'lparen', 'ARG', 'rparen', 'lbrace', 'BLOCK', 'RETURN', 'rbrace']}
+<Parent NODE>  FDECL
+<CHILD NODE>  vtype
+Child node vtype not found in stack. Creating new node and setting parent as FDECL
+<CHILD NODE>  id
+Child node id not found in stack. Creating new node and setting parent as FDECL
+<CHILD NODE>  lparen
+Child node lparen not found in stack. Creating new node and setting parent as FDECL
+<CHILD NODE>  ARG
+Child node ARG found in stack. Popping from stack and setting parent as FDECL
+<CHILD NODE>  rparen
+Child node rparen not found in stack. Creating new node and setting parent as FDECL
+<CHILD NODE>  lbrace
+Child node lbrace not found in stack. Creating new node and setting parent as FDECL
+<CHILD NODE>  BLOCK
+Child node BLOCK found in stack. Popping from stack and setting parent as FDECL
+<CHILD NODE>  RETURN
+Child node RETURN found in stack. Popping from stack and setting parent as FDECL
+<CHILD NODE>  rbrace
+Child node rbrace not found in stack. Creating new node and setting parent as FDECL
+<stack> 
+VDECL
+FDECL
+=================
+<CFG NUMBER>  3
+<CFG GRAMMER>  {'CODE': []}
+<Parent NODE>  CODE
+<CHILD NODE>  ''
+Child node '' not found in stack. Creating new node and setting parent as CODE
+<stack>
+VDECL
+FDECL
+CODE
+=================
+<CFG NUMBER>  2
+<CFG GRAMMER>  {'CODE': ['FDECL', 'CODE']}
+<Parent NODE>  CODE
+<CHILD NODE>  FDECL
+Child node FDECL found in stack. Popping from stack and setting parent as CODE
+<CHILD NODE>  CODE
+Child node CODE found in stack. Popping from stack and setting parent as CODE
+<stack>
+VDECL
+CODE
+=================
+<CFG NUMBER>  1
+<CFG GRAMMER>  {'CODE': ['VDECL', 'CODE']}
+<Parent NODE>  CODE
+<CHILD NODE>  VDECL
+Child node VDECL found in stack. Popping from stack and setting parent as CODE
+<CHILD NODE>  CODE
+Child node CODE found in stack. Popping from stack and setting parent as CODE
+<stack>
+CODE
+=================
+CODE
+├── VDECL
+│   ├── vtype
+│   ├── id
+│   └── semi
+└── CODE
+    ├── FDECL
+    │   ├── vtype
+    │   ├── id
+    │   ├── lparen
+    │   ├── ARG
+    │   │   └── ''
+    │   ├── rparen
+    │   ├── lbrace
+    │   ├── BLOCK
+    │   │   ├── STMT
+    │   │   │   ├── if
+    │   │   │   ├── lparen
+    │   │   │   ├── COND
+    │   │   │   │   ├── boolstr
+    │   │   │   │   └── COND_T
+    │   │   │   │       ├── comp
+    │   │   │   │       ├── boolstr
+    │   │   │   │       └── COND_T
+    │   │   │   │           └── ''
+    │   │   │   ├── rparen
+    │   │   │   ├── lbrace
+    │   │   │   ├── BLOCK
+    │   │   │   │   └── ''
+    │   │   │   ├── rbrace
+    │   │   │   └── ELSE
+    │   │   │       └── ''
+    │   │   └── BLOCK
+    │   │       └── ''
+    │   ├── RETURN
+    │   │   ├── return
+    │   │   ├── RHS
+    │   │   │   └── EXPR
+    │   │   │       └── T_EXPR
+    │   │   │           └── F_EXPR
+    │   │   │               └── num
+    │   │   └── semi
+    │   └── rbrace
+    └── CODE
+        └── ''
+==================
+Analysis complete.
