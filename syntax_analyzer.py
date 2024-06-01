@@ -3,7 +3,6 @@ from parsetree import *
 
 def syntax_analyzer(target_token_list, action_df, goto_df):
     ### SLR Parsing based on action, goto table
-    terminal_list = return_terminal_list(action_df)
 
     cfg = get_cfg() # cfg를 가져옴
     state_stack = [0] # 스택은 state number만을 포함한다. 즉, 정수만을 포함한다.
@@ -47,20 +46,25 @@ def syntax_analyzer(target_token_list, action_df, goto_df):
                 lhs_list.pop()
             lhs_list.append(rule_left) # lhs_list에 rule_left를 추가
 
-        elif decision == "acc":
-            #if len(lhs_list) == 1 and lhs_list[0] == "S'":
-                print("=======================\n<ACCEPTED!!!!.> ")
-                print('Print Prase tree? say \'Yes\'')
-                input('')
-                print(reduce_cfg_list)
-                root_node = construct_parse_tree(reduce_cfg_list)
-                print_parse_tree(root_node)
+        elif decision == "acc": # accept 하는 경우
+            print("=======================\n<ACCEPTED!!!!.> ")
+            user_input = None
+            while True:
+                user_input = input("Print Parse tree? (y/n) : ")
+                if user_input == "n":
+                    print("Exiting...")
+                    exit()
+                elif user_input == "y":
+                    break
+                else:
+                    print("Please enter 'y' or 'n'")
 
-                break
-            #else:
-             #   print("Rejected, \'acc\' was reached but lhs_list is not empty.")
-            #break
+            print(reduce_cfg_list)
+            root_node = construct_parse_tree(reduce_cfg_list)
+            print_parse_tree(root_node)
 
+            break
+        
         #reject 작업
         else:
             if decision == "nan":
@@ -72,8 +76,6 @@ def syntax_analyzer(target_token_list, action_df, goto_df):
 
             break
             #sys.exit()
-
-
 
 
     return None
