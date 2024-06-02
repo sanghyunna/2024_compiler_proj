@@ -12,6 +12,7 @@
 '''
 
 import pandas as pd
+#필요 없으면 삭제 요망
 
 #read_csv(): pandas 라이브러리로 dataFrame 반환
 action_df = pd.read_csv("./action.csv").astype(str)

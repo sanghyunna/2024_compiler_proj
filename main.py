@@ -23,14 +23,14 @@ goto_file_dir = "./goto.csv"
 token_list = []
 if len(sys.argv) == 2:
     input_file_dir = sys.argv[1]
-    token_list = get_tokens(input_file_dir)
-    #token_list 테스트
+    try:
+        token_list = get_tokens(input_file_dir)
+    except FileNotFoundError:
+            print(f"Error: The file '{input_file_dir}' was not found.")
+            sys.exit()
     print(token_list)
 elif len(sys.argv) == 1:
     print("Please enter target string to parse.")
-    sys.exit()
-else:
-    print("Invalid input.")
     sys.exit()
 
 ## Read action, goto table
